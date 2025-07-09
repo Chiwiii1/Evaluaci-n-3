@@ -1,0 +1,598 @@
+/**
+* Template Name: NiceRestaurant
+* Template URL: https://bootstrapmade.com/nice-restaurant-bootstrap-template/
+* Updated: Jun 06 2025 with Bootstrap v5.3.6
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+:root {
+  --vino: #6d112a;
+  --blanco: #fff;
+  --gris: #f9f9f9;
+}
+
+
+html, body, *, *:before, *:after {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  background: var(--blanco);
+  color: var(--vino);
+  margin: 0;
+}
+
+/* Header ajustado */
+.header-bg {
+  background: var(--vino);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.header-logo {
+  width: 100%;
+  background: var(--vino);
+  padding: 1.5rem 0 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-img {
+  height: 90px;
+  max-width: 220px;
+  width: auto;
+  display: block;
+}
+.header-curve {
+  width: 100%;
+  height: 48px;
+  background: var(--vino);
+  border-radius: 0 0 24px 24px;
+  margin-bottom: -24px;
+}
+
+/* Nav */
+nav, .navbar, .navmenu {
+  background: var(--vino) !important;
+  color: var(--blanco) !important;
+}
+nav a, .navbar-nav .nav-link, .navmenu a {
+  color: var(--blanco) !important;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+nav a.active, .navbar-nav .nav-link.active, .navmenu a.active,
+nav a:hover, .navbar-nav .nav-link:hover, .navmenu a:hover {
+  background: var(--blanco) !important;
+  color: var(--vino) !important;
+}
+.navbar-nav {
+  width: 100% !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 2rem;
+}
+.navbar {
+  padding-bottom: 2rem !important;
+}
+.nav-link {
+  text-align: center !important;
+}
+
+/* Secciones y animación */
+.section, section {
+  background: var(--gris);
+  color: var(--vino);
+  width: 100%;
+  margin: 0;
+  padding: 3rem 0;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.23,1.01,.32,1);
+  will-change: opacity, transform;
+}
+.section.visible, section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--vino);
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+/* Inicio */
+.inicio-texto {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: didot-w01-italic, serif;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+}
+
+/* Carrusel animado */
+#carousel {
+  width: 100vw;
+  max-width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  position: relative;
+  height: 400px;
+  background: #eee;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+#carousel img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+#carousel .carousel-img-active {
+  opacity: 1;
+  z-index: 2;
+}
+#carousel .carousel-img-next {
+  opacity: 0;
+  z-index: 1;
+}
+@media (max-width: 991px) {
+  #carousel { height: 220px; }
+}
+@media (max-width: 767px) {
+  #carousel { height: 140px; }
+}
+
+/* Información */
+.info-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.info-bloque {
+  background: var(--blanco);
+  border: 2px solid var(--vino);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #0002;
+  padding: 1.5rem 1rem;
+  margin-top: 0;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.info-bloque.center {
+  align-items: center;
+  text-align: center;
+}
+.mapa-adornado {
+  background: var(--blanco);
+  border: 2px solid var(--vino);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #0002;
+  padding: 1rem;
+  max-width: 100%;
+  margin: 1rem auto;
+}
+
+/* Compra Online */
+#compra {
+  background: var(--vino);
+  color: var(--blanco);
+  text-align: center;
+  padding-bottom: 4.5rem !important;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+#compra-barra {
+  width: 100%;
+  background: var(--vino);
+  padding-top: 4rem;
+  padding-bottom: 2.5rem;
+  border-radius: 0 0 60px 60px;
+  position: relative;
+  z-index: 2;
+}
+#compra-barra h2 {
+  user-select: none;
+  cursor: default;
+  color: var(--blanco);
+  text-decoration: none;
+}
+.compra-img-rounded-top {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px #0002;
+  background: var(--blanco);
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+#compra-texto {
+  color: var(--blanco);
+  margin: 2rem auto 0 auto;
+  max-width: 700px;
+  padding: 0 1rem 2rem 1rem;
+  font-size: 1.2rem;
+}
+
+/* Pago */
+#pago-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto 2.5rem auto;
+}
+.pago-bloque {
+  flex: 1 1 320px;
+  min-width: 260px;
+  max-width: 400px;
+  background: var(--blanco);
+  color: var(--vino);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #0002;
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.webpay-logo-box {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+.webpay-logo-box img {
+  max-height: 180px;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+.webpay-logo-box img:hover {
+  transform: scale(1.08);
+}
+
+/* English Menu */
+#english {
+  background: var(--vino);
+  color: var(--blanco);
+  width: 100%;
+  padding: 3rem 0 !important;
+  position: relative;
+  z-index: 2;
+}
+#english h2 {
+  text-align: center;
+  color: var(--blanco);
+  margin-bottom: 2rem;
+}
+#english img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  cursor: zoom-in;
+  transition: box-shadow 0.2s;
+}
+#english img:hover {
+  box-shadow: 0 4px 24px #fff7;
+}
+.english-menu-img {
+  max-width: 800px;
+  width: 100%;
+  cursor: zoom-in;
+  box-shadow: 0 2px 8px #0001;
+  transition: box-shadow 0.2s;
+  margin-bottom: 2rem;
+}
+.english-menu-img:hover {
+  box-shadow: 0 4px 24px #fff7;
+}
+
+/* Modal English Menu */
+#english-menu-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+}
+#english-menu-modal .modal-content {
+  position: relative;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  max-width: 98vw;
+  max-height: 98vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#english-menu-modal-img {
+  max-width: 98vw;
+  max-height: 98vh;
+  width: auto;
+  height: auto;
+  user-select: none;
+  touch-action: none;
+  cursor: grab;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px #0008;
+  transition: box-shadow 0.2s;
+}
+#english-menu-modal .close-btn {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  font-size: 2rem;
+  color: #a00;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 8px #0003;
+}
+
+/* Footer */
+footer, .footer {
+  background: var(--vino);
+  color: var(--blanco);
+  width: 100%;
+  padding: 3rem 0;
+  position: relative;
+  margin-top: 0;
+}
+footer div, .footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+footer a, .footer a {
+  display: inline-block;
+  color: var(--blanco);
+  text-decoration: none;
+}
+footer a:hover, .footer a:focus, .footer .comic-bubble-content a:hover {
+  color: #f9f9f9;
+}
+
+
+.comic-bubble {
+  position: relative;
+  display: inline-block;
+}
+.comic-bubble-content {
+  background: var(--blanco);
+  color: var(--vino);
+  border-radius: 8px;
+  padding: 1.2em 2em;
+  min-width: 220px;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px #0002;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+.comic-bubble-content a {
+  color: var(--vino);
+  text-decoration: none;
+  font-weight: bold;
+  word-break: break-all;
+}
+.comic-bubble-triangle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -18px;
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 18px solid var(--blanco);
+}
+
+/* Botones */
+.btn, button, input[type="submit"] {
+  background: var(--vino) !important;
+  color: var(--blanco) !important;
+  border-radius: 6px !important;
+  border: none !important;
+  transition: background 0.2s, color 0.2s;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn:hover, button:hover, input[type="submit"]:hover {
+  background: #4a0c1d !important;
+  color: var(--blanco) !important;
+}
+
+/* Formularios */
+input, select, textarea {
+  border-radius: 6px !important;
+  border: 1px solid #ccc !important;
+  color: var(--vino) !important;
+  padding: 0.5rem !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--vino) !important;
+  outline: none !important;
+}
+
+
+a {
+  color: var(--vino);
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover {
+  color: #4a0c1d;
+}
+
+
+.navbar.sticky-navbar {
+  position: sticky;
+  top: 0;
+  background: var(--vino) !important;
+  z-index: 20;
+  box-shadow: 0 2px 8px #0002;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  background: #fff !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  padding: 0.5rem 0;
+}
+.dropdown-menu .dropdown-item {
+  color: #6d112a !important; 
+  background: #fff !important;
+}
+.dropdown-menu .dropdown-item:hover, 
+.dropdown-menu .dropdown-item:focus {
+  background: #f8f9fa !important;
+  color: #6d112a !important;
+}
+
+
+@media (max-width: 900px) {
+  nav, .navbar-nav {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 1rem 0 !important;
+  }
+  .inicio-texto {
+    font-size: 1.2rem !important;
+    padding: 0 0.5rem;
+  }
+  #carousel, #carousel-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .info-flex, #pago-flex {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1.5rem !important;
+    max-width: 98% !important;
+  }
+  .mapa-adornado,
+  .info-bloque,
+  .pago-bloque {
+    max-width: 98% !important;
+    min-width: 0 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  .compra-img-rounded-top {
+    width: 98% !important;
+    max-width: 98% !important;
+  }
+  #english img {
+    max-width: 98% !important;
+    width: 98% !important;
+  }
+  footer div {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+}
+@media (max-width: 600px) {
+  h2, h3 {
+    font-size: 1.2rem !important;
+  }
+  .inicio-texto {
+    font-size: 1rem !important;
+  }
+  #compra-barra h2 {
+    font-size: 1.3rem !important;
+  }
+  .comic-bubble-content {
+    font-size: 0.95em !important;
+    padding: 0.7em 1em !important;
+  }
+}
+@media (max-width: 991px) {
+  .navbar-nav {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    padding: 1rem 0 !important;
+  }
+  .navbar .dropdown {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar .dropdown-menu {
+    width: 100%;
+    min-width: 0;
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
+#inicio {
+  padding-top: 0 !important;
+}
+h2.text-center {
+  width: 100%;
+  display: block;
+}
+.text-center {
+  text-align: center !important;
+}
