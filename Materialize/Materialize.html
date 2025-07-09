@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chochoo Project</title>
+  <link rel="icon" href="../Chocolatta.avif">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+  <link href="cssM/materialize.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <div class="header-bg">
+    <div class="header-logo">
+      <img src="../Chocolatta.avif" alt="Logo Chocolatta">
+    </div>
+    <div class="header-curve"></div>
+  </div>
+
+  <!-- Navbar sticky justo debajo del header -->
+  <nav class="nav-extended sticky-navbar">
+    <div class="nav-wrapper">
+      <!-- Logo y hamburguesa solo en móvil -->
+      <a href="#" data-target="mobile-menu" class="sidenav-trigger left" style="margin-left:8px;">
+        <i class="material-icons" style="font-size:2.2rem;color:var(--blanco);">menu</i>
+      </a>
+      <div class="nav-content hide-on-small-and-down">
+        <a class="active" href="#inicio" id="link-inicio">Inicio</a>
+        <a href="#informacion" id="link-informacion">Información</a>
+        <a href="#compra" id="link-compra">Compra Online</a>
+        <a href="#pago" id="link-pago">Formas de Pago</a>
+        <a href="#english" id="link-english">English Menu</a>
+        <a class="dropdown-trigger" href="#" data-target="mas-dropdown"
+           style="margin-left:1.5rem;background:transparent;color:var(--blanco);font-weight:bold;border-radius:6px;transition:background 0.2s, color 0.2s;">
+          Más
+        </a>
+        <!-- Dropdown Structure -->
+        <ul id="mas-dropdown" class="dropdown-content" style="min-width:160px;background:#fff;">
+          <li><a href="../index.html" target="_blank" style="color:var(--vino);font-weight:bold;">Bootstrap</a></li>
+          <li><a href="../Bulma/Bulma.html" target="_blank" style="color:var(--vino);font-weight:bold;">Bulma</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidenav para móvil -->
+  <ul class="sidenav" id="mobile-menu">
+    <li><a href="#inicio" class="sidenav-close">Inicio</a></li>
+    <li><a href="#informacion" class="sidenav-close">Información</a></li>
+    <li><a href="#compra" class="sidenav-close">Compra Online</a></li>
+    <li><a href="#pago" class="sidenav-close">Formas de Pago</a></li>
+    <li><a href="#english" class="sidenav-close">English Menu</a></li>
+    <li class="divider"></li>
+    <li><a href="../index.html" target="_blank">Bootstrap</a></li>
+    <li><a href="../Bulma/Bulma.html" target="_blank">Bulma</a></li>
+  </ul>
+
+  <!-- Inicio -->
+  <section id="inicio" class="section p-0" style="padding-bottom:2rem; padding-top:0 !important;">
+    <div class="carousel carousel-slider">
+      <a class="carousel-item"><img src="../Choco1.avif" alt="Chocolatta"></a>
+      <a class="carousel-item"><img src="../Choco2.avif" alt="Chocolatta"></a>
+    </div>
+    <div class="container">
+      <p class="inicio-texto">
+        La Chocolatta nace como un sueño dulce... sueño de pioneros suizos, que siguiendo los pasos de sus ancestros, con la misma tenacidad y espíritu, decidieron materializar ese sueño: Proporcionar a sus consumidores una variedad de productos frescos y naturales.<br><br>
+        Las combinaciones son múltiples y el resultado se traduce en innumerables exquisiteces para el paladar, con ingredientes de la más alta calidad.
+      </p>
+    </div>
+  </section>
+
+  <!-- Información -->
+  <section id="informacion" class="section">
+    <div class="container">
+      <h2 class="center-align" style="margin-bottom:2rem;">Información</h2>
+      <div class="row">
+        <!-- Contacto -->
+        <div class="col s12 m5">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title center-align">Contacto</span>
+              <p class="center-align">Gobernador Carlos Bories #852</p>
+              <p class="center-align">
+                <a href="mailto:contacto@chocolatta.cl">contacto@chocolatta.cl</a>
+              </p>
+              <p class="center-align">612248150</p>
+            </div>
+          </div>
+        </div>
+        <!-- Formulario -->
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-content">
+              <form id="contactForm">
+                <div class="row">
+                  <div class="input-field col s12 m6">
+                    <input id="nombre" type="text" required>
+                    <label for="nombre">Nombre completo</label>
+                  </div>
+                  <div class="input-field col s12 m6">
+                    <input id="email" type="email" required>
+                    <label for="email">Correo electrónico</label>
+                  </div>
+                  <div class="input-field col s12 m6">
+                    <input id="telefono" type="tel" required placeholder="+56 9XXXXXXXX" autocomplete="tel">
+                    <label for="telefono">Teléfono (+56)</label>
+                    <span id="alertTelefono" class="helper-text red-text" style="display:none;">
+                      El número no es válido. Debe ser +56 9XXXXXXXX (9 dígitos después de +56).
+                    </span>
+                  </div>
+                  <div class="input-field col s12 m6">
+                    <input id="edad" type="number" required>
+                    <label for="edad">Edad</label>
+                    <span id="alertEdad" class="helper-text red-text" style="display:none;">
+                      Debes tener al menos 18 años para registrarte.
+                    </span>
+                  </div>
+                  <div class="input-field col s12 m6">
+                    <input id="usuario" type="text" required>
+                    <label for="usuario">Nombre de usuario</label>
+                    <span id="alertUsuario" class="helper-text red-text" style="display:none;">
+                      El usuario debe tener al menos 4 caracteres.
+                    </span>
+                  </div>
+                  <div class="input-field col s12 m6">
+                    <input id="contrasena" type="password" required>
+                    <label for="contrasena">Contraseña</label>
+                    <span id="alertContrasena" class="helper-text red-text" style="display:none;">
+                      La contraseña debe tener al menos 6 caracteres y contener al menos un número.
+                    </span>
+                  </div>
+                  <div class="col s12 right-align">
+                    <button type="submit" class="btn" style="background:var(--vino);color:var(--blanco);">Registrarse</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Mapa, Datos de Transferencia y Horario -->
+      <div class="row">
+        <!-- Mapa -->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title center-align">Ubicación</span>
+              <div style="position:relative;width:100%;padding-bottom:56.25%;border-radius:12px;overflow:hidden;">
+                <iframe
+                  src="https://www.google.com/maps?q=Gobernador+Carlos+Bories+852,+Punta+Arenas,+Chile&output=embed"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:12px;">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Horario y Datos de Transferencia juntos -->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content center-align">
+              <span class="card-title">Horario</span>
+              <div class="row" style="max-width:260px;margin:0 auto;">
+                <div class="col s6">Lunes a Viernes</div>
+                <div class="col s6">07:00 - 22:00</div>
+              </div>
+              <div class="row" style="max-width:260px;margin:0 auto;">
+                <div class="col s6">Sábado y Domingo</div>
+                <div class="col s6">09:00 - 22:00</div>
+              </div>
+              <div class="divider" style="margin:1.5rem 0;"></div>
+              <span class="card-title" style="font-size:1.1rem;">Datos de Transferencia</span>
+              <p>La Chocolatta Ltda</p>
+              <p>77.392.930-0</p>
+              <p>Banco de Chile</p>
+              <p>Cta Cte 0878896321</p>
+              <p>
+                <a href="mailto:pagoschocolatta@gmail.com">pagoschocolatta@gmail.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Video -->
+      <div class="row">
+        <div class="col s12 m10 offset-m1">
+          <div class="card">
+            <div class="card-content center-align" style="min-height:180px;">
+              <div style="height:315px; background:#eee; border-radius:12px; color:#aaa; font-size:1.1rem; display:flex;align-items:center;justify-content:center;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/UUhcOPXCLKM?si=TPV11TgHS3S45z_n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compra Online -->
+  <section id="compra" class="section" style="background:var(--vino);color:var(--blanco);">
+    <div class="container">
+      <div id="compra-barra">
+        <h2 class="center-align" style="color:var(--blanco);user-select:none;cursor:default;">Compra Online</h2>
+      </div>
+      <div class="center-align">
+        <a href="https://toteat.app/r/cl/La-Chocolatta/1822/menu" target="_blank" rel="noopener" style="display:inline-block;">
+          <img src="../toteat app logo.avif" alt="Compra Online"
+               style="max-width:500px;width:100%;background:#fff;display:inline-block;border-radius:12px;box-shadow:0 2px 8px #0001;">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formas de Pago -->
+  <section id="pago" class="section">
+    <div class="container">
+      <div class="row">
+        <!-- Datos de Transferencia -->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content center-align">
+              <span class="card-title">Datos de Transferencia</span>
+              <p>La Chocolatta Ltda</p>
+              <p>77.392.930-0</p>
+              <p>Banco de Chile</p>
+              <p>Cta Cte 0878896321</p>
+              <p>
+                <a href="mailto:pagoschocolatta@gmail.com">pagoschocolatta@gmail.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Webpay -->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content center-align">
+              <span class="card-title">Paga con Webpay</span>
+              <div style="display:flex;justify-content:center;">
+                <a href="https://www.webpay.cl/company/34938" target="_blank" rel="noopener">
+                  <img src="../webpay-logo.avif" alt="Webpay" style="max-height:180px;max-width:90%;">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="center-align" style="margin-top:2rem;">
+        <b>Recuerda: Todos los pedidos con delivery deben estar previamente pagados.</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- English Menu -->
+  <section id="english" class="section" style="background:var(--vino);color:var(--blanco);">
+    <div class="container">
+      <h2 class="center-align" style="color:var(--blanco);">English Menu</h2>
+      <div class="row center-align">
+        <div class="col s12 m8 offset-m2">
+          <img src="../EnglishMenu.avif" alt="English Menu"
+               class="responsive-img english-menu-img"
+               onclick="openEnglishMenuModal('EnglishMenu.avif')">
+          <img src="../EnglishMenu1.avif" alt="English Menu 1"
+               class="responsive-img english-menu-img"
+               onclick="openEnglishMenuModal('EnglishMenu1.avif')">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal English Menu -->
+  <div id="english-menu-modal">
+    <div class="modal-content">
+      <img id="english-menu-modal-img" src="" alt="English Menu Zoom">
+      <button class="close-btn" onclick="closeEnglishMenuModal()">×</button>
+    </div>
+  </div>
+
+  <!-- Modal Más -->
+  <div id="mas-modal" class="modal" style="border-radius:16px;">
+    <div class="modal-content center-align">
+      <h4>Ver en otro framework</h4>
+      <div style="margin-top:2rem;">
+        <a href="../index.html" target="_blank" class="btn" style="margin:0 1rem 1rem 0;">Bootstrap</a>
+        <a href="../Bulma/Bulma.html" target="_blank" class="btn" style="margin:0 1rem 1rem 0;">Bulma</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="center-align" style="display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:wrap;">
+      <a href="https://www.facebook.com/profile.php?id=100063689765303" target="_blank" rel="noopener">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <circle cx="20" cy="20" r="18" fill="#e0e0e0" />
+          <text x="20" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#6C1F34" font-weight="bold">f</text>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/chocolatta_baeriswyl/" target="_blank" rel="noopener">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <circle cx="20" cy="20" r="18" fill="#e0e0e0"/>
+          <g>
+            <rect x="12" y="12" width="16" height="16" rx="5" fill="#6C1F34"/>
+            <circle cx="20" cy="20" r="5" fill="#fff"/>
+            <circle cx="25" cy="15" r="1.2" fill="#fff"/>
+          </g>
+        </svg>
+      </a>
+      <div class="comic-bubble-content">
+        <span style="font-weight:bold;">Escríbenos:</span>
+        <a href="mailto:contacto@chocolatta.cl">contacto@chocolatta.cl</a>
+        <div class="comic-bubble-triangle"></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    // Carrusel Materialize
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.carousel');
+      M.Carousel.init(elems, {
+        fullWidth: true,
+        indicators: false,
+        duration: 700
+      });
+      // Carrusel automático
+      setInterval(function() {
+        var instance = M.Carousel.getInstance(elems[0]);
+        if (instance) instance.next();
+      }, 5000);
+    });
+
+    // Dropdowns
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.dropdown-trigger');
+      M.Dropdown.init(elems, {coverTrigger: false, constrainWidth: false});
+    });
+
+    // Scrollspy para navbar
+    document.addEventListener('DOMContentLoaded', function () {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('nav .nav-content a');
+
+      function onScroll() {
+        let scrollPos = window.scrollY + 130;
+        let currentId = '';
+        sections.forEach(section => {
+          if (scrollPos >= section.offsetTop) {
+            currentId = section.id;
+          }
+        });
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + currentId) {
+            link.classList.add('active');
+          }
+        });
+      }
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    });
+
+    // Scroll suave con offset para navbar sticky
+    document.querySelectorAll('nav .nav-content a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          const navbar = document.querySelector('nav.sticky-navbar');
+          const navbarHeight = navbar ? navbar.offsetHeight : 80;
+          const y = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 16;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Animación de aparición al hacer scroll
+    const sections = document.querySelectorAll('section');
+    function revealSectionsOnScroll() {
+      const triggerBottom = window.innerHeight * 0.92;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealSectionsOnScroll);
+    window.addEventListener('DOMContentLoaded', revealSectionsOnScroll);
+
+    // Modal English Menu
+    function openEnglishMenuModal(imgSrc) {
+      const modal = document.getElementById('english-menu-modal');
+      const img = document.getElementById('english-menu-modal-img');
+      img.src = imgSrc;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeEnglishMenuModal() {
+      document.getElementById('english-menu-modal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    window.addEventListener('keydown', function (e) {
+      const modal = document.getElementById('english-menu-modal');
+      if (modal.style.display === 'flex' && e.key === "Escape") closeEnglishMenuModal();
+    });
+
+    // Pan (arrastrar) en el modal de English Menu: mouse y touch
+    (function() {
+      const modalImg = document.getElementById('english-menu-modal-img');
+      let isPanning = false, startX = 0, startY = 0, lastX = 0, lastY = 0, scale = 1.8;
+
+      function setTransform() {
+        modalImg.style.transform = `scale(${scale}) translate(${lastX/scale}px, ${lastY/scale}px)`;
+      }
+
+      // Mouse events
+      modalImg.addEventListener('mousedown', function(e) {
+        isPanning = true;
+        startX = e.clientX - lastX;
+        startY = e.clientY - lastY;
+        modalImg.style.cursor = "grabbing";
+        e.preventDefault();
+      });
+      document.addEventListener('mousemove', function(e) {
+        if (!isPanning) return;
+        lastX = e.clientX - startX;
+        lastY = e.clientY - startY;
+        setTransform();
+      });
+      document.addEventListener('mouseup', function() {
+        isPanning = false;
+        modalImg.style.cursor = "grab";
+      });
+
+      // Touch events
+      modalImg.addEventListener('touchstart', function(e) {
+        if (e.touches.length !== 1) return;
+        isPanning = true;
+        startX = e.touches[0].clientX - lastX;
+        startY = e.touches[0].clientY - lastY;
+        e.preventDefault();
+      }, { passive: false });
+      document.addEventListener('touchmove', function(e) {
+        if (!isPanning || e.touches.length !== 1) return;
+        lastX = e.touches[0].clientX - startX;
+        lastY = e.touches[0].clientY - startY;
+        setTransform();
+      }, { passive: false });
+      document.addEventListener('touchend', function() {
+        isPanning = false;
+      });
+
+      // Zoom al abrir el modal
+      const modal = document.getElementById('english-menu-modal');
+      function openZoom() {
+        lastX = 0; lastY = 0;
+        modalImg.style.transition = "transform 0.2s";
+        setTransform();
+        setTimeout(() => { modalImg.style.transition = ""; }, 250);
+      }
+      // Detecta apertura del modal
+      const observer = new MutationObserver(() => {
+        if (modal.style.display === 'flex') openZoom();
+      });
+      observer.observe(modal, { attributes: true, attributeFilter: ['style'] });
+
+      // Doble click o doble tap para resetear posición
+      let lastTap = 0;
+      modalImg.addEventListener('dblclick', function() {
+        lastX = 0; lastY = 0; setTransform();
+      });
+      modalImg.addEventListener('touchend', function(e) {
+        const now = Date.now();
+        if (now - lastTap < 400) { 
+          lastX = 0; lastY = 0; setTransform();
+        }
+        lastTap = now;
+      });
+
+      // Cursor visual
+      modalImg.style.cursor = "grab";
+    })();
+
+    // Validación del formulario de contacto
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      let ok = true;
+      const tel = document.getElementById('telefono').value.trim();
+      const telAlert = document.getElementById('alertTelefono');
+      if (!/^\+56\s?9\d{8}$/.test(tel)) {
+        telAlert.style.display = 'block';
+        ok = false;
+      } else {
+        telAlert.style.display = 'none';
+      }
+      // Edad
+      const edad = parseInt(document.getElementById('edad').value, 10);
+      const edadAlert = document.getElementById('alertEdad');
+      if (isNaN(edad) || edad < 18) {
+        edadAlert.style.display = 'block';
+        ok = false;
+      } else {
+        edadAlert.style.display = 'none';
+      }
+      // Usuario
+      const usuario = document.getElementById('usuario').value.trim();
+      const usuarioAlert = document.getElementById('alertUsuario');
+      if (usuario.length < 4) {
+        usuarioAlert.style.display = 'block';
+        ok = false;
+      } else {
+        usuarioAlert.style.display = 'none';
+      }
+      // Contraseña
+      const pass = document.getElementById('contrasena').value;
+      const passAlert = document.getElementById('alertContrasena');
+      if (!/^(?=.*\d).{6,}$/.test(pass)) {
+        passAlert.style.display = 'block';
+        ok = false;
+      } else {
+        passAlert.style.display = 'none';
+      }
+      if (!ok) e.preventDefault();
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var modals = document.querySelectorAll('.modal');
+      M.Modal.init(modals);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var sidenav = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(sidenav, {edge: 'left'});
+      // Cierra el menú al hacer clic en cualquier link
+      document.querySelectorAll('.sidenav a.sidenav-close').forEach(function(link) {
+        link.addEventListener('click', function() {
+          var instance = M.Sidenav.getInstance(document.getElementById('mobile-menu'));
+          if (instance) instance.close();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
